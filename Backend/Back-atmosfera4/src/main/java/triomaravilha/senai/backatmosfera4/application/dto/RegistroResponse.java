@@ -25,4 +25,5 @@ public class RegistroResponse {
     private float velVento;
     private int direcaoVento;
     private int intensidadeWifi;
+
 }

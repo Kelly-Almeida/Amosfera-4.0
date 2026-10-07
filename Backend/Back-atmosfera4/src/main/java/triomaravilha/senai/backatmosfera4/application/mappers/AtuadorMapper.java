@@ -1,6 +1,7 @@
 package triomaravilha.senai.backatmosfera4.application.mappers;
 
 import triomaravilha.senai.backatmosfera4.application.dto.AtuadorResponse;
+import triomaravilha.senai.backatmosfera4.infra.model.AtuadorModel;
 import triomaravilha.senai.backatmosfera4.interface_.dto.AtuadorRequest;
 
 public interface AtuadorMapper {
@@ -8,24 +9,22 @@ public interface AtuadorMapper {
         if (model == null) return null;
 
         return new AtuadorResponse(
-                model.getId(),
-                model.getNomeAtuador(),
-                model.getDispositivo(),
-                model.getStatus,
-                model.getUltimoComando()
+                model.getId_atuador(),
+                model.getNome_atuador(),
+                model.getId_dispositivo_fk(),
+                model.getStatus_atual(),
+                model.getUltimo_comando()
         );
     }
-z
+
     public static AtuadorModel mapper(AtuadorRequest request){
         if (request == null) return null;
 
         return new AtuadorModel(
-            null,
-            request.getNomeAtuador(),
-            request.getDispositivo(),
-            request.getStatus(),
-            request.getUltimoComando()
-
+            request.dispositivo(),
+            request.nomeAtuador(),
+            request.status(),
+            request.ultimoComando()
         );
     }
 
