@@ -5,13 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import triomaravilha.senai.atmosfera_4_0.application.mappers.RegistroMapper;
+import triomaravilha.senai.atmosfera_4_0.domain.entity.Dispositivo;
 import triomaravilha.senai.atmosfera_4_0.infra.model.RegistroModel;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public record RegistroRequest(
-     int dispositivo,
+     DispositivoRequest dispositivo,
      Timestamp timestamp,
      LocalDateTime dataHora,
      float temperatura,

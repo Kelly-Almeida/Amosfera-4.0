@@ -20,11 +20,12 @@ import java.time.LocalDateTime;
 public class RegistroModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_registro")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_dispositivo_fk", nullable = false)
-    private int id_dispositivo_fk;
+    private DispositivoModel id_dispositivo_fk;
 
     @Column
     private Timestamp timestamp;

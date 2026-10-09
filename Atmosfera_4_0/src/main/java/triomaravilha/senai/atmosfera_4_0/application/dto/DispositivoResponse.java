@@ -8,7 +8,7 @@ public record DispositivoResponse (
     String nomeDispositivo,
     String localizacao,
     String tipoDispositivo,
-    int gatewayPai
+    DispositivoResponse gatewayPai
 ){
 
     public static DispositivoResponse fromModel(DispositivoModel model) {

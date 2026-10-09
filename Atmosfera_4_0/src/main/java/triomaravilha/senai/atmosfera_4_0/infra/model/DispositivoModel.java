@@ -16,6 +16,7 @@ import lombok.Setter;
 public class DispositivoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_dispositivo")
     private Long id_dispositivo;
 
     @Column(nullable = false, length = 30)
@@ -27,12 +28,11 @@ public class DispositivoModel {
     @Column(nullable = false, length = 30)
     private String tipo_dispositivo;
 
-    @Column
     @ManyToOne
-    @JoinColumn(name = "id_dispositivo")
-    private int gateway_pai_fk;
+    @JoinColumn(name = "gateway_pai_fk")
+    private DispositivoModel gateway_pai_fk;
 
-    public DispositivoModel(String nome_dispositivo, String localizacao, String tipo_dispositivo, int gateway_pai_fk) {
+    public DispositivoModel(String nome_dispositivo, String localizacao, String tipo_dispositivo, DispositivoModel gateway_pai_fk) {
         this.nome_dispositivo = nome_dispositivo;
         this.localizacao = localizacao;
         this.tipo_dispositivo = tipo_dispositivo;

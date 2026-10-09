@@ -12,7 +12,7 @@ public record DispositivoRequest (
         String nomeDispositivo,
         String localizacao,
         String tipoDispositivo,
-        int gatewayPai
+        DispositivoRequest gatewayPai
 ){
 
     public DispositivoModel toModel() {

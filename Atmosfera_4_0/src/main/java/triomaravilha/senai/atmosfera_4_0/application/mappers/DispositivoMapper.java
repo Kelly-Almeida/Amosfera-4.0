@@ -14,7 +14,7 @@ public interface DispositivoMapper {
                 model.getNome_dispositivo(),
                 model.getLocalizacao(),
                 model.getTipo_dispositivo(),
-                model.getGateway_pai_fk()
+                DispositivoResponse.fromModel(model.getGateway_pai_fk())
 
         );
     }
@@ -26,7 +26,7 @@ public interface DispositivoMapper {
                 request.nomeDispositivo(),
                 request.localizacao(),
                 request.tipoDispositivo(),
-                request.gatewayPai()
+                request.gatewayPai().toModel()
         );
     }
 }

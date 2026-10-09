@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public record AtuadorRequest (
         String nomeAtuador,
-        int dispositivo,
+        DispositivoRequest dispositivo,
         boolean status,
         LocalDateTime ultimoComando
 ){
